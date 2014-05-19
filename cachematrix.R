@@ -1,7 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This file contains two functions, makeCacheMatrix and cacheSolve.
+## The first, makeCacheMatrix, takes as an argument a matrix (x) and creates a list
+## of four function objects. The second, cacheSolve, takes the list resulting from
+## makeCacheMatrix and computes or returns the inverse of x.
 
-## Write a short comment describing this function
+## makeCacheMatrix: argument is a matrix object. The function returns a list of
+## four functions. They are (1) set: takes a matrix as an argument and assigns it
+## to x, (2) get: returns its argument (x) when called, (3) setInverse: takes the
+## inverse matrix as an argument and sets it (I), and (4) getInverse: returns I.
 
 makeCacheMatrix <- function(x = matrix()) {
   I <- NULL
@@ -18,7 +23,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve takes a list created by makeCacheMatrix and pulls the inverse matrix
+## using the getInverse() function. If inverse (I) is NOT null, it returns I from
+## the cache. Otherwise it gets the original matrix (x) using the get() function,
+## computes the inverse with solve() and assigns it to the list using the
+## setInverse() function.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
